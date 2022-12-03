@@ -80,11 +80,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Conexion.cs" />
+    <Compile Include="Entidades\Arbitro.cs" />
+    <Compile Include="Entidades\Equipo.cs" />
+    <Compile Include="Entidades\Estadistica.cs" />
+    <Compile Include="Entidades\Jugador.cs" />
+    <Compile Include="Entidades\Liga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
