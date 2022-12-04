@@ -1,5 +1,4 @@
-﻿using OneSoccer.core.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,13 +6,12 @@ using System.Web.Mvc;
 
 namespace OneSoccer.Controllers
 {
-    public class LigaController : Controller
+    public class EntrenadorController : Controller
     {
-        // GET: Liga
+        // GET: Entrenador
         public ActionResult Index()
         {
-            List<Liga> ligas = Liga.GetAll();
-            return View(ligas);
+            return View();
         }
     }
 }

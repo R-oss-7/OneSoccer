@@ -1,4 +1,7 @@
-﻿<div id="page-wrapper">
+﻿@using OneSoccer.core.Entidades
+@model List<Liga>
+
+<div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -12,8 +15,45 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panle-body">
-                        <div class="table-responsive">
+                      
 
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Liga</th>
+                                        <th>Pais</th>
+                                        <th>Equipos</th>
+                                        <th>Arbitros</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(Liga l in Model)
+                                    {
+
+                                        <tr>
+                                            <td>
+                                                @l.nombre
+                                            </td>
+                                            <td>
+                                                @l.pais
+                                            </td>
+                                            <td>
+                                                <a href="@Url.Action("VerEquipos", "Equipo")/@l.id"> Ver Equipos</a>
+                                            </td>
+                                            <td>
+                                                <a href="@Url.Action("VerArbitros", "Arbitro")/@l.id"> Ver Arbitros</a>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
 
                         </div>
 
@@ -28,4 +68,3 @@
     </div>
 
 </div>
-

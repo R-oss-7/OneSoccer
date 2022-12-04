@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSoccer.web", "OneSoccer\OneSoccer.web.csproj", "{B9A76D37-A2A3-493E-A694-46416204512B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSoccer.core", "OneSoccer.core\OneSoccer.core.csproj", "{6342C6FB-1F01-4804-9AB8-4091DE280046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSoccer.Core", "OneSoccer.core\OneSoccer.Core.csproj", "{6342C6FB-1F01-4804-9AB8-4091DE280046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
