@@ -1,0 +1,45 @@
+﻿@using OneSoccer.core.Entidades
+@model Liga
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registro de liga</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Registro
+                    </div>
+                    <div class="panel-body">
+
+                        <form action="@Url.Action("Guardar","Liga")">
+                            <input type="hidden" class="form-control" name="id" value="@Model.id">
+                            <div class="form-group">
+                                <label>Nombre de la liga:</label>
+                                <input class="form-control" name="nombre" value="@if (Model.id != 0) { @Model.nombre}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Pais:</label>
+                                <input class="form-control" name="Pais" value="@if (Model.id != 0) { @Model.pais}" />
+                            </div>
+
+
+                            <button class="btn btn-success" type="submit">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

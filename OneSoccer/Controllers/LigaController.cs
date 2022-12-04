@@ -15,5 +15,23 @@ namespace OneSoccer.Controllers
             List<Liga> ligas = Liga.GetAll();
             return View(ligas);
         }
+
+        public ActionResult Registro(int id)
+        {
+            Liga liga = Liga.GetById(id);
+            return View(liga);
+        }
+
+        public ActionResult Guardar(int id, string nombre, string pais)
+        {
+            Liga.Guardar(id, nombre, pais);
+            return RedirectToAction("index");
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            Liga.Eliminar(id);
+            return RedirectToAction("index");
+        }
     }
 }

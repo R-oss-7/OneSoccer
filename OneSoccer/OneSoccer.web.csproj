@@ -217,6 +217,7 @@
     <Content Include="Content\js\metisMenu.min.js" />
     <Content Include="Content\js\morris-data.js" />
     <Content Include="Content\js\morris.min.js" />
+    <Content Include="Content\js\oneSoccer\liga.js" />
     <Content Include="Content\js\raphael.min.js" />
     <Content Include="Content\js\startmin.js" />
     <Content Include="favicon.ico" />
@@ -260,6 +261,7 @@
     <Content Include="Views\Equipo\Index.cshtml" />
     <Content Include="Views\Jugadores\Index.cshtml" />
     <Content Include="Views\Liga\Index.cshtml" />
+    <Content Include="Views\Liga\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

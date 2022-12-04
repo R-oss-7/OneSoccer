@@ -52,5 +52,101 @@ namespace OneSoccer.core.Entidades
             return ligas;
         }
 
+
+        public static bool Guardar(int id, string nombre, string pais)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.connection.CreateCommand();
+
+                    if (id == 0)
+                    {
+                        cmd.CommandText = "INSERT INTO liga (nombre, pais) VALUES (@nombre, @pais);";
+
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        cmd.Parameters.AddWithValue("@pais", pais);
+                 
+                    }
+                    else
+                    {
+                        cmd.CommandText = "UPDATE liga SET nombre = @nombre, pais = @pais WHERE id = @id;";
+
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        cmd.Parameters.AddWithValue("@pais", pais);
+                       
+                    }
+
+                    result = cmd.ExecuteNonQuery() == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public static Liga GetById(int id)
+        {
+            Liga liga = new Liga();
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    string query = "SELECT id, nombre, pais FROM liga WHERE id = @id;";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion.connection);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        liga.id = int.Parse(dataReader["id"].ToString());
+                        liga.nombre = dataReader["nombre"].ToString();
+                        liga.pais = dataReader["pais"].ToString();
+                       
+                    }
+                    dataReader.Close();
+                    conexion.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return liga;
+        }
+
+        public static bool Eliminar(int id)
+        {
+            bool result = false;
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    MySqlCommand cmd = conexion.connection.CreateCommand();
+                    cmd.CommandText = "DELETE FROM liga WHERE id = @id;";
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    result = cmd.ExecuteNonQuery() == 1;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+
+
     }
 }

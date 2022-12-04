@@ -1,4 +1,5 @@
-﻿
+﻿@using OneSoccer.core.Entidades
+@model List<Equipo>
 
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -15,7 +16,44 @@
                 <div class="panel panel-default">
                     <div class="panle-body">
                         <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estadio</th>
+                                        <th>Pais</th>
+                                        <th>Presidente</th>
+                                        <th>Jugadores</th>
 
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Equipo e in Model)
+                                    {
+
+                                        <tr>
+                                            <td>
+                                                @e.nombre
+                                            </td>
+                                            <td>
+                                                @e.estadio
+                                            </td>
+                                            <td>
+                                                @e.pais
+                                            </td>
+                                            <td>
+                                                @e.presidente
+                                            </td>
+                                            <td>
+                                                <a href="@Url.Action("VerJugadores", "Modulo")/@e.id"> Ver Jugadores</a>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
 
                         </div>
 
@@ -26,5 +64,5 @@
             </div>
 
         </div>
-        </div>
     </div>
+</div>

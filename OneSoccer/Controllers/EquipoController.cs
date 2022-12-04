@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OneSoccer.core.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,13 @@ namespace OneSoccer.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+
+        public ActionResult VerEquipos(int id)
+        {
+            List<Equipo> equipo = Equipo.EquipoByLiga(id);
+            return View("Index", equipo);
         }
     }
 }
