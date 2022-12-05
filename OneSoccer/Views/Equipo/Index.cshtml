@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Equipos</h1>
+                <h1 class="page-header">Equipos de liga</h1>
             </div>
 
         </div>
@@ -15,6 +15,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panle-body">
+                        <a href="@Url.Action("Registro","Equipo", new { id = 0})" class="btn btn-primary">Agregar nuevo</a>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -22,6 +23,7 @@
                                         <th>Nombre</th>
                                         <th>Estadio</th>
                                         <th>Pais</th>
+                                        <th>Entrenador</th>
                                         <th>Presidente</th>
                                         <th>Jugadores</th>
 
@@ -43,10 +45,13 @@
                                                 @e.pais
                                             </td>
                                             <td>
+                                                @e.entrenador
+                                            </td>
+                                            <td>
                                                 @e.presidente
                                             </td>
                                             <td>
-                                                <a href="@Url.Action("VerJugadores", "Modulo")/@e.id"> Ver Jugadores</a>
+                                                <a href="@Url.Action("VerJugadores", "Jugadores")/@e.id"> Ver Jugadores</a>
                                             </td>
 
 

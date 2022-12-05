@@ -168,7 +168,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArbitroController.cs" />
-    <Compile Include="Controllers\EntrenadorController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JugadoresController.cs" />
@@ -262,11 +261,12 @@
     <Content Include="Views\Jugadores\Index.cshtml" />
     <Content Include="Views\Liga\Index.cshtml" />
     <Content Include="Views\Liga\Registro.cshtml" />
+    <Content Include="Views\Jugadores\Registro.cshtml" />
+    <Content Include="Views\Equipo\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Entrenador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

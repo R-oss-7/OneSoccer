@@ -18,8 +18,20 @@ namespace OneSoccer.Controllers
 
         public ActionResult VerEquipos(int id)
         {
-            List<Equipo> equipo = Equipo.EquipoByLiga(id);
-            return View("Index", equipo);
+            List<Equipo> equipos = Equipo.EquipoByLiga(id);
+            return View("Index", equipos);
+        }
+        public ActionResult Registro(int id)
+        {
+            Equipo equipo = Equipo.GetById(id);
+            return View(equipo);
+        }
+
+        public ActionResult Guardar(int id, string nombre,string estadio, string pais, string entrenador, string presidente)
+        {
+            Equipo.Guardar(id, nombre,estadio, pais, entrenador, presidente);
+            return RedirectToAction("index");
         }
     }
+
 }

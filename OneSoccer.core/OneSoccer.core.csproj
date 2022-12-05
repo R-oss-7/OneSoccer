@@ -90,7 +90,6 @@
   <ItemGroup>
     <Compile Include="Connection\Conexion.cs" />
     <Compile Include="Entidades\Arbitro.cs" />
-    <Compile Include="Entidades\Entrenador.cs" />
     <Compile Include="Entidades\Equipo.cs" />
     <Compile Include="Entidades\Estadistica.cs" />
     <Compile Include="Entidades\Jugador.cs" />
