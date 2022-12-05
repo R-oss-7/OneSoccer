@@ -1,4 +1,7 @@
-﻿<div id="page-wrapper">
+﻿@using OneSoccer.core.Entidades
+@model List<Jugador>
+
+<div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -12,10 +15,57 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panle-body">
-                        <div class="table-responsive">
+                        <a href="" class="btn btn-primary">Agregar nuevo</a>
 
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Posicion</th>
+                                    <th>Numero</th>
+                                    <th>Nacionalidad</th>
+                                    <th>Edad</th>
+                                    <th>Equipo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Jugador j in Model)
+                                {
 
-                        </div>
+                                    <tr>
+                                        <td>
+                                            @j.nombre
+                                        </td>
+                                        <td>
+                                            @j.apellido
+                                        </td>
+                                        <td>
+                                            @j.posicion
+                                        </td>
+                                        <td>
+                                            @j.numero
+                                        </td>
+                                        <td>
+                                            @j.nacionalidad
+                                        </td>
+                                        <td>
+                                            @j.edad
+                                        </td>
+                                        <td>
+                                            @j.equipo
+                                        </td>
+
+                                        <td>
+                                            <a href="@Url.Action("Registro","Jugador", new { id = j.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
+                                            <a onclick="eliminar(@j.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
 
                     </div>
 

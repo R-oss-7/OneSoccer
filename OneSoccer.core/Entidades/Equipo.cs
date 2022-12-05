@@ -39,9 +39,6 @@ namespace OneSoccer.core.Entidades
                         equipo.pais = dataReader["equipo"].ToString();
                         equipo.presidente = dataReader["presidente"].ToString();
 
-
-
-
                         equipos.Add(equipo);
                     }
 

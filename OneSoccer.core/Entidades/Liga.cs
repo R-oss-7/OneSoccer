@@ -134,7 +134,6 @@ namespace OneSoccer.core.Entidades
                     MySqlCommand cmd = conexion.connection.CreateCommand();
                     cmd.CommandText = "DELETE FROM liga WHERE id = @id;";
                     cmd.Parameters.AddWithValue("@id", id);
-
                     result = cmd.ExecuteNonQuery() == 1;
 
                 }
@@ -145,8 +144,6 @@ namespace OneSoccer.core.Entidades
             }
             return result;
         }
-
-
 
     }
 }

@@ -13,7 +13,6 @@ namespace OneSoccer.core.Entidades
         public String pais { get; set; }
         public int edad { get; set; }
         public String posicion { get; set; }
-
         public Liga liga { get; set; }
     }
 }
