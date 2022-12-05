@@ -49,7 +49,7 @@
                                                 
                                                 <td>
                                                     <a href="@Url.Action("Registro","Arbitro", new { id = a.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                                    <a onclick="eliminar(@a.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="@Url.Action("Eliminar","Arbitro", new { id = l.id})" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                         }

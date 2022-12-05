@@ -59,7 +59,7 @@
 
                                         <td>
                                             <a href="@Url.Action("Registro","Jugadores", new { id = j.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                            <a onclick="eliminar(@j.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                            <a href="@Url.Action("Eliminar","Jugadores", new { id = l.id})" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                         <td>
                                             <a href="@Url.Action("VerEstadisticas", "Estadistica")/@j.id"> Ver Estadisticas</a>
