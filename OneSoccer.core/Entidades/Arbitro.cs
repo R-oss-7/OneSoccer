@@ -108,7 +108,7 @@ namespace OneSoccer.core.Entidades
                 Conexion conexion = new Conexion();
                 if (conexion.OpenConnection())
                 {
-                    string query = "SELECT id, nombre, pais, edad, posicion, liga FROM arbitro WHERE id = @id;";
+                    string query = "SELECT id, nombreCom, pais, edad, posicion, liga FROM arbitro WHERE id = @id;";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion.connection);
                     cmd.Parameters.AddWithValue("@id", id);
@@ -117,7 +117,7 @@ namespace OneSoccer.core.Entidades
                     while (dataReader.Read())
                     {
                         arbitro.id = int.Parse(dataReader["id"].ToString());
-                        arbitro.nombrecom = dataReader["nombrecom"].ToString();
+                        arbitro.nombrecom = dataReader["nombreCom"].ToString();
                         arbitro.nacionalidad = dataReader["pais"].ToString();
                         arbitro.edad = int.Parse(dataReader["edad"].ToString());
                         arbitro.posicion = dataReader["posicion"].ToString();
@@ -177,7 +177,7 @@ namespace OneSoccer.core.Entidades
                         arbitro.nombrecom = dataReader["nombreCom"].ToString();
                         arbitro.nacionalidad = dataReader["nacionalidad"].ToString();
                         arbitro.posicion = dataReader["edad"].ToString();
-                        arbitro.edad = int.Parse(dataReader["posicion"].ToString());
+        
                        
 
 

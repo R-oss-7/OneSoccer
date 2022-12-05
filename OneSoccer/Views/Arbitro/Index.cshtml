@@ -38,7 +38,7 @@
                                                     @a.nombrecom
                                                 </td>
                                                 <td>
-                                                    @a.pais
+                                                    @a.nacionalidad
                                                 </td>
                                                 <td>
                                                     @a.edad
@@ -46,9 +46,7 @@
                                                 <td>
                                                     @a.posicion
                                                 </td>
-                                                <td>
-                                                    @a.liga
-                                                </td>
+                                                
                                                 <td>
                                                     <a href="@Url.Action("Registro","Arbitro", new { id = a.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
                                                     <a onclick="eliminar(@a.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
