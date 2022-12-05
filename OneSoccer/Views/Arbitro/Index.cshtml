@@ -1,4 +1,6 @@
-﻿
+﻿@using OneSoccer.core.Entidades
+@model List<Arbitro>
+
 
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -15,7 +17,50 @@
                 <div class="panel panel-default">
                     <div class="panle-body">
                         <div class="table-responsive">
-                            
+
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Pais</th>
+                                            <th>Edad</th>
+                                            <th>Posicion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (Arbitro a in Model)
+                                        {
+
+                                            <tr>
+                                                <td>
+                                                    @a.nombrecom
+                                                </td>
+                                                <td>
+                                                    @a.pais
+                                                </td>
+                                                <td>
+                                                    @a.edad
+                                                </td>
+                                                <td>
+                                                    @a.posicion
+                                                </td>
+                                                <td>
+                                                    @a.liga
+                                                </td>
+                                                <td>
+                                                    <a href="@Url.Action("Registro","Arbitro", new { id = a.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
+                                                    <a onclick="eliminar(@a.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+
+
+                            </div>
 
                         </div>
 
@@ -28,6 +73,4 @@
         </div>
 
     </div>
-
 </div>
-

@@ -1,0 +1,48 @@
+﻿using OneSoccer.core.Entidades
+@model OneSoccer.core.Entidades.Arbitro
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registro de arbitros</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Registro
+                    </div>
+                    <div class="panel-body">
+
+                        <form action="@Url.Action("Guardar","Arbitro")">
+                            <input type="hidden" class="form-control" name="id" value="@Model.id">
+                            <div class="form-group">
+                                <label>Nombre del jugador:</label>
+                                <input class="form-control" name="Nombre" value="@if (Model.id != 0) { @Model.nombrecom}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Pais:</label>
+                                <input class="form-control" name="Pais" value="@if (Model.id != 0) { @Model.pais}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Edad:</label>
+                                <input class="form-control" name="Edad" value="@if (Model.id != 0) { @Model.edad}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Posicion:</label>
+                                <input class="form-control" name="Posicion" value="@if (Model.id != 0) { @Model.posicion}" />
+                            </div>
+                            <button class="btn btn-success" type="submit">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

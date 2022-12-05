@@ -266,6 +266,7 @@
     <Content Include="Views\Equipo\Registro.cshtml" />
     <Content Include="Views\Estadistica\Index.cshtml" />
     <Content Include="Views\Estadistica\Registro.cshtml" />
+    <Content Include="Views\Arbitro\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
