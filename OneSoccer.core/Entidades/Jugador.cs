@@ -115,7 +115,7 @@ namespace OneSoccer.core.Entidades
                 Conexion conexion = new Conexion();
                 if (conexion.OpenConnection())
                 {
-                    string query = "SELECT id, nombre, apellido, posicion, numero, nacionalidad, edad, equipo FROM liga WHERE id = @id;";
+                    string query = "SELECT * FROM liga WHERE id = "+ id;
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion.connection);
                     cmd.Parameters.AddWithValue("@id", id);
@@ -166,6 +166,47 @@ namespace OneSoccer.core.Entidades
             return result;
         }
 
+
+        public static List<Jugador> JugadorByEquipo(int id)
+        {
+            List<Jugador> jugadores = new List<Jugador>();
+            try
+            {
+                Conexion conexion = new Conexion();
+                if (conexion.OpenConnection())
+                {
+                    string query = "SELECT * FROM jugador WHERE idEquipo = " + id + " ORDER BY numero";
+                    MySqlCommand command = new MySqlCommand(query, conexion.connection);
+                    MySqlDataReader dataReader = command.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        Jugador jugador = new Jugador();
+                        jugador.id = int.Parse(dataReader["id"].ToString());
+                        jugador.nombre = dataReader["nombre"].ToString();
+                        jugador.apellido = dataReader["apellido"].ToString();
+                        jugador.posicion = dataReader["posicion"].ToString();
+                        jugador.numero = int.Parse(dataReader["numero"].ToString());
+                        jugador.nacionalidad = dataReader["nacionalidad"].ToString();
+                        jugador.edad = int.Parse(dataReader["edad"].ToString());
+
+
+                        jugadores.Add(jugador);
+                    }
+
+                    dataReader.Close();
+                    conexion.CloseConnection();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return jugadores;
+
+        }
 
 
     }

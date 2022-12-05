@@ -70,7 +70,7 @@ namespace OneSoccer.core.Entidades
 
                     if (id == 0)
                     {
-                        cmd.CommandText = "INSERT INTO equipo (nombre, estadio, pais, entrenador, presidente) VALUES (@nombre, @estadio, @pais, @entrenador, @presidente);";
+                        cmd.CommandText = "INSERT INTO equipo (nombre, estadio, pais, entrenador, presidente VALUES (@nombre, @estadio, @pais, @entrenador, @presidente);";
 
                         cmd.Parameters.AddWithValue("@nombre", nombre);
                         cmd.Parameters.AddWithValue("@estadio", estadio);

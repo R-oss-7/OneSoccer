@@ -15,6 +15,13 @@ namespace OneSoccer.Controllers
             List<Jugador> jugadores = Jugador.GetAll();
             return View(jugadores);
         }
+
+        public ActionResult VerJugadores(int id)
+        {
+            List<Jugador> jugadores = Jugador.JugadorByEquipo(id);
+            return View("Index", jugadores);
+        }
+
         public ActionResult Registro(int id)
         {
             Jugador jugador = Jugador.GetById(id);

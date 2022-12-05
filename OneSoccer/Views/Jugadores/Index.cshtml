@@ -15,8 +15,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panle-body">
-                        <a href="" class="btn btn-primary">Agregar nuevo</a>
-
+                        <a href="@Url.Action("Registro","Jugadores", new { id = 0})" class="btn btn-primary">Agregar nuevo</a>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -58,7 +57,7 @@
                                         </td>
 
                                         <td>
-                                            <a href="@Url.Action("Registro","Jugador", new { id = j.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
+                                            <a href="@Url.Action("Registro","Jugadores", new { id = j.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
                                             <a onclick="eliminar(@j.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                         </td>
 
