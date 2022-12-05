@@ -1,5 +1,5 @@
 ﻿@using OneSoccer.core.Entidades
-@model List<Jugador>
+@model List<Estadistica>
 
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -15,56 +15,50 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panle-body">
-                        <a href="@Url.Action("Registro","Jugadores", new { id = 0})" class="btn btn-primary">Agregar nuevo</a>
+                        <a href="@Url.Action("Registro","Estadistica", new { id = 0})" class="btn btn-primary">Agregar nuevo</a>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Posicion</th>
-                                    <th>Numero</th>
-                                    <th>Nacionalidad</th>
-                                    <th>Edad</th>
-                                    <th>Equipo</th>
+                                    <th>Partidos Jugados</th>
+                                    <th>Minutos Jugados</th>
+                                    <th>Goles</th>
+                                    <th>Asistencias</th>
+                                    <th>Tarjeta Amarillas</th>
+                                    <th>Tarjetas Rojas</th>
                                     <th>Acciones</th>
-                                    <th>Estadisticas</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Jugador j in Model)
+                                @foreach (Estadistica f in Model)
                                 {
 
                                     <tr>
                                         <td>
-                                            @j.nombre
+                                            @f.partidos
                                         </td>
                                         <td>
-                                            @j.apellido
+                                            @f.MinutosJugados
                                         </td>
                                         <td>
-                                            @j.posicion
+                                            @f.goles
                                         </td>
                                         <td>
-                                            @j.numero
+                                            @f.asistencias
                                         </td>
                                         <td>
-                                            @j.nacionalidad
+                                            @f.tarjetaAma
                                         </td>
                                         <td>
-                                            @j.edad
+                                            @f.tarjetasRojas
                                         </td>
-                                        <td>
-                                            @j.equipo
-                                        </td>
+                                       
 
                                         <td>
-                                            <a href="@Url.Action("Registro","Jugadores", new { id = j.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                            <a onclick="eliminar(@j.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                            <a href="@Url.Action("Registro","Jugadores", new { id = f.id})" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
+                                            <a onclick="eliminar(@f.id)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                         </td>
-                                        <td>
-                                            <a href="@Url.Action("VerEstadisticas", "Estadistica")/@j.id"> Ver Estadisticas</a>
-
-                                        </td>
+                                      
 
                                     </tr>
                                 }
@@ -82,3 +76,4 @@
     </div>
 
 </div>
+--

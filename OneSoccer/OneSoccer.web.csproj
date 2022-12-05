@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArbitroController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
+    <Compile Include="Controllers\EstadisticaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JugadoresController.cs" />
     <Compile Include="Controllers\LigaController.cs" />
@@ -263,6 +264,8 @@
     <Content Include="Views\Liga\Registro.cshtml" />
     <Content Include="Views\Jugadores\Registro.cshtml" />
     <Content Include="Views\Equipo\Registro.cshtml" />
+    <Content Include="Views\Estadistica\Index.cshtml" />
+    <Content Include="Views\Estadistica\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
